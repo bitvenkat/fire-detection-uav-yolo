@@ -75,19 +75,24 @@ Researcher, School of Engineering, JNU
 
 
 📱 Proposed Mobile Integration (Flutter + IoT Architecture)
+
 To translate the drone's edge detection into actionable intelligence for ground teams, a cross-platform mobile application is designed using Flutter. This architecture bridges the YOLOv11 inference engine  with a user-friendly frontend via standard IoT protocols.
 
-System Data Flow
+1. System Data Flow
 
 The system follows a Publisher/Subscriber model to ensure low-latency alerts:
 graph TD
+
+
     A[Drone/RPi 4] -- "1. Fire Detected (YOLOv11)" --> B(Edge Processing)
     B -- "2. Publish JSON Payload (MQTT/4G)" --> C{Cloud Broker / Firebase}
     C -- "3. Push Notification" --> D[Flutter Mobile App]
     D -- "4. Live Location & Feed" --> E[User Interface]
 
-    Technical Implementation Plan
 
+
+2. Technical Implementation Plan
+  
 The Raspberry Pi 4, acting as the IoT Edge device, runs a Python script that triggers a callback when conf > 0.5. This triggers an MQTT publish event.
 
 1. Edge-Side Payload (Python)
@@ -98,7 +103,7 @@ When the YOLOv11n model detects fire, the RPi transmits a lightweight JSON packe
 
 The Flutter application utilizes the mqtt_client package to listen for critical alerts.
 
-**Why Flutter?**
+3. **Why Flutter?**
 
 Single Codebase: Deploys to both Android (for field rangers) and iOS (for command centers).
 
