@@ -72,3 +72,15 @@ GPS Waypoints: Autonomous path planning integration.
 👨‍💻 Author
 Venkat Bhardwaj
 Researcher, School of Engineering, JNU
+
+
+## 📜 Citation
+If you use this code or dataset in your research, please cite the associated paper (currently under review):
+
+```bibtex
+@article{bhardwaj2026fire,
+  title={A Lightweight Fire Detection Framework Based on YOLOv11 for Deployment on Embedded UAV Systems},
+  author={Bhardwaj, Venkat and Akanksha and Devi, G. Renuka},
+  journal={Preprint submitted to Elsevier},
+  year={2026}
+}
